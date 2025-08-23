@@ -1,8 +1,11 @@
 import { Image, TouchableOpacity, StyleSheet, Text } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { MaterialIcons } from "@expo/vector-icons";
+import { router, useRouter } from "expo-router";
 
 export default function Index() {
+  const router = useRouter()
+
   return (
     <LinearGradient
       colors={["#00457D", "#05051F"]}
@@ -13,7 +16,7 @@ export default function Index() {
       <Text style={styles.title}>
         Boas-Vindas!
       </Text>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={() => {router.push("/cities")}}>
         <Text style={styles.buttonText}>
           Entrar
         </Text>
@@ -36,6 +39,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 25,
     color: '#fff',
+    fontFamily: "Montserrat_400Regular"
   },
   button: {
     backgroundColor: '#7693FF',
@@ -50,6 +54,7 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 20,
     color: '#000',
+    fontFamily: "Montserrat_600SemiBold"
   }
 
 })
