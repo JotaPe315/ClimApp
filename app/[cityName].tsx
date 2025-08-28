@@ -8,7 +8,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 const CityName = () => {
     const router = useRouter()
     const searchParams = useLocalSearchParams()
-    const [cityDetails, setCityDetails] = useState()
+    const [cityDetails, setCityDetails] = useState(null)
 
     const handleData = async () => {
         try {
